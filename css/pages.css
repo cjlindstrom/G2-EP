@@ -1,0 +1,243 @@
+/* Page-specific styles */
+
+.page-hero {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    padding: 8rem 0 3rem;
+    text-align: center;
+    margin-top: 80px;
+}
+
+.page-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.page-hero p {
+    font-size: 1.25rem;
+    opacity: 0.9;
+}
+
+.page-content {
+    padding: 3rem 0;
+}
+
+.content-section {
+    margin-bottom: 3rem;
+}
+
+.content-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.75rem;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+}
+
+.content-section p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+/* Supply Grid for categories */
+.supply-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.supply-category {
+    background: var(--light-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-color);
+}
+
+.supply-category h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.supply-category ul {
+    list-style: none;
+}
+
+.supply-category li {
+    padding: 0.4rem 0;
+    padding-left: 1.25rem;
+    position: relative;
+}
+
+.supply-category li::before {
+    content: '•';
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* Detailed lists */
+.detailed-list {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.detailed-list li {
+    padding: 0.75rem 0;
+    padding-left: 2rem;
+    position: relative;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.detailed-list li:last-child {
+    border-bottom: none;
+}
+
+.detailed-list li::before {
+    content: '✓';
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Numbered lists */
+.numbered-list {
+    list-style: none;
+    counter-reset: step-counter;
+    margin-top: 1rem;
+}
+
+.numbered-list li {
+    padding: 1rem 0;
+    padding-left: 3rem;
+    position: relative;
+    border-bottom: 1px solid var(--border-color);
+    counter-increment: step-counter;
+}
+
+.numbered-list li:last-child {
+    border-bottom: none;
+}
+
+.numbered-list li::before {
+    content: counter(step-counter);
+    background: var(--accent-color);
+    color: var(--white);
+    position: absolute;
+    left: 0;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* Highlight box */
+.highlight-box {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+}
+
+.highlight-box h3 {
+    margin-bottom: 0.5rem;
+}
+
+.highlight-box p {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.highlight-box ul {
+    list-style: none;
+}
+
+.highlight-box li {
+    padding: 0.3rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.highlight-box li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+}
+
+/* Shelf life table */
+.shelf-life-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.shelf-life-table th,
+.shelf-life-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.shelf-life-table th {
+    background: var(--primary-color);
+    color: var(--white);
+    font-weight: 600;
+}
+
+.shelf-life-table tr:hover {
+    background: var(--light-bg);
+}
+
+.shelf-life-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Back link */
+.back-link {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .page-hero {
+        padding: 6rem 0 2rem;
+        margin-top: 120px;
+    }
+
+    .page-hero h1 {
+        font-size: 2rem;
+    }
+
+    .content-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .supply-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .numbered-list li {
+        padding-left: 2.5rem;
+    }
+
+    .numbered-list li::before {
+        width: 1.75rem;
+        height: 1.75rem;
+        font-size: 0.85rem;
+    }
+}
